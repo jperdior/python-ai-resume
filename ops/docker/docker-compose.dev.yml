@@ -1,0 +1,27 @@
+version: "3.6"
+
+services:
+
+  back:
+    environment:
+      - APP_ENV=dev
+      - OPENAI_API_KEY=somekey
+      - DB_USER=root
+      - DB_PASSWORD=verysecretpass
+      - DB_HOST=database
+      - DB_PORT=27017
+      - DB_DATABASE=ai-resume
+    ports:
+      - "8080:8000"
+    networks:
+      - ai-resume
+
+
+  database:
+    ports:
+      - "3306:3306"
+    networks:
+      - ai-resume
+
+networks:
+  ai-resume:
