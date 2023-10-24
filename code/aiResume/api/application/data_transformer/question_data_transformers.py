@@ -1,5 +1,5 @@
-from domain.entities import Question
-from infrastructure.models import QuestionModel
+from api.domain.entities import Question
+from api.infrastructure.storage.models import QuestionModel
 
 class QuestionDataTransformer():
 

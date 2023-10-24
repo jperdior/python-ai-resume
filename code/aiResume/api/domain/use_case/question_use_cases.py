@@ -1,5 +1,5 @@
-from domain.entities import Question
-from domain.repository.question_repository import QuestionRepositoryInterface
+from api.domain.entities import Question
+from api.domain.repository.question_repository import QuestionRepositoryInterface
 
 class QuestionUseCases():
 

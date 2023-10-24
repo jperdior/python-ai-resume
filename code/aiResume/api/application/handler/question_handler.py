@@ -1,5 +1,5 @@
 from domain.use_case.question_use_cases import QuestionUseCases
-from api.v1.serializer.question_serializer import GetQuestionSerializer
+from api.presentation.v1.serializer.question_serializer import GetQuestionSerializer
 
 
 class QuestionHandler():

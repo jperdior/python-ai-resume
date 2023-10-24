@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from domain.entities import Question
+from api.domain.entities import Question
 
 class QuestionRepositoryInterface(ABC):
 
