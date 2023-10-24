@@ -36,16 +36,13 @@ pip-install:
 	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip install -r requirements.txt
 
 pip-upgrade:
-	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip install --upgrade -r requirements.txt && pip freeze > code/aiResume/requirements.txt
+	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip install --upgrade -r requirements.txt
 
 pip-add:
-	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip install ${package} && pip freeze > code/aiResume/requirements.txt
+	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip install ${package}
 
 pip-remove:
-	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip uninstall ${package} && pip freeze > code/aiResume/requirements.txt
-
-pip-freeze:
-	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip freeze > code/aiResume/requirements.txt
+	@${DOCKER_COMPOSE} exec ${BACK_CONTAINER} pip uninstall ${package}
 
 # MIGRATIONS
 
