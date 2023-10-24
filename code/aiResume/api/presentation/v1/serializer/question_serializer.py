@@ -5,7 +5,7 @@ from api.infrastructure.storage.models import QuestionModel
 class PostQuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = QuestionModel
-        fields = ('question', 'answer')
+        fields = ('question', )
 
 class GetQuestionSerializer(serializers.ModelSerializer):
     class Meta:

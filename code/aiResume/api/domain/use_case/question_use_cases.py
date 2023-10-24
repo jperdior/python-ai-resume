@@ -1,11 +1,12 @@
 from api.domain.entities import Question
 from api.domain.repository.question_repository import QuestionRepositoryInterface
+from api.domain.factories import QuestionFactory
 
 class QuestionUseCases():
 
-    def __init__(self):
-        self.repository = QuestionRepositoryInterface()
-
+    def __init__(self, repository: QuestionRepositoryInterface):
+        self.repository = repository
+        
     def create(self, question: str):
-        question = Question(question=question, answer="", computingTokens=0, completionTokens=0, totalTokens=0)
+        question = QuestionFactory.create_question(question=question)
         return self.repository.save(question)

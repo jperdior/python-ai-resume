@@ -7,6 +7,8 @@ WORKDIR /app
 
 COPY requirements.txt /app/
 
+RUN apk update && apk add --no-cache mariadb-dev build-base
+
 RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt

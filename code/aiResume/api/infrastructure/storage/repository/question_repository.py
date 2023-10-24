@@ -10,4 +10,5 @@ class QuestionRepository(QuestionRepositoryInterface):
 
     def save(self, question: Question):
         question_model = QuestionDataTransformer.entity_to_model(question)
-        return super().save(question_model)   
+        print(question)
+        question_model.save() 
