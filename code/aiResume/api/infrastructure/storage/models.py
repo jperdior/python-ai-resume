@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class QuestionModel(models.Model):
     id = models.CharField(max_length=26, primary_key=True)
     question = models.CharField(max_length=200)
@@ -10,7 +11,6 @@ class QuestionModel(models.Model):
 
     def __str__(self):
         return self.question
-    
+
     class Meta:
-        db_table = 'question'
-    
+        db_table = "question"

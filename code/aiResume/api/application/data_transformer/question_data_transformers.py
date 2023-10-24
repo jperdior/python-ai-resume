@@ -1,8 +1,8 @@
 from api.domain.entities import Question
 from api.infrastructure.storage.models import QuestionModel
 
-class QuestionDataTransformer():
 
+class QuestionDataTransformer:
     @staticmethod
     def model_to_entity(question_model: QuestionModel) -> Question:
         return Question(

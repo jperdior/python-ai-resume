@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "api"
+    "api",
 ]
 
 MIDDLEWARE = [
@@ -79,19 +79,17 @@ WSGI_APPLICATION = "aiResume.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ.get('DB_DATABASE'),
-        "USER": os.environ.get('DB_USER'),
-        "PASSWORD": os.environ.get('DB_PASSWORD'),
-        "HOST": os.environ.get('DB_HOST'),
-        "PORT": os.environ.get('DB_PORT'),
+        "NAME": os.environ.get("DB_DATABASE"),
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": os.environ.get("DB_PORT"),
         "CONN_MAX_AGE": 3600,
         # Atomic requests used in program only when needed
         # 'ATOMIC_REQUESTS': True,
-        "OPTIONS": {
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'"
-        },
-        'TEST': {
-            'NAME': 'ai-resume-test',
+        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
+        "TEST": {
+            "NAME": "ai-resume-test",
         },
     },
 }

@@ -4,22 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='QuestionModel',
+            name="QuestionModel",
             fields=[
-                ('id', models.CharField(max_length=26, primary_key=True, serialize=False)),
-                ('question', models.CharField(max_length=200)),
-                ('answer', models.CharField(max_length=200)),
-                ('computingTokens', models.IntegerField()),
-                ('completionTokens', models.IntegerField()),
-                ('totalTokens', models.IntegerField()),
+                (
+                    "id",
+                    models.CharField(max_length=26, primary_key=True, serialize=False),
+                ),
+                ("question", models.CharField(max_length=200)),
+                ("answer", models.CharField(max_length=200)),
+                ("computingTokens", models.IntegerField()),
+                ("completionTokens", models.IntegerField()),
+                ("totalTokens", models.IntegerField()),
             ],
         ),
     ]
