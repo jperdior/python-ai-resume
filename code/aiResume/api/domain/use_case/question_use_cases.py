@@ -1,7 +1,7 @@
 from api.domain.entities import Question
 from api.domain.repository.question_repository import QuestionRepositoryInterface
 from api.domain.factories import QuestionFactory
-from api.domain.artificial_intelligence import ArtificialIntelligenceProviderInterface
+from api.domain.artificial_intelligence.artificial_intelligence_provider import ArtificialIntelligenceProviderInterface
 
 
 class QuestionUseCases:
