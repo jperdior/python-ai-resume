@@ -17,7 +17,6 @@ class QuestionHandler():
                 return result
             except Exception as e:
                 logging.error("Error creating question: " + str(e))
-                transaction.set_rollback(True)
                 raise e
                 
 

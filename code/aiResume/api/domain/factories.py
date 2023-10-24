@@ -1,14 +1,11 @@
-import ulid
+from api.domain.service.unique_id_generator import UniqueIdGeneratorInterface
 from api.domain.entities import Question
 
-class QuestionFactory():
-    """
-    QuestionFactory class
-    """
-    @staticmethod
-    def create_question(question:str) -> Question:
-        """
-        create_question method
-        """
-        return Question(id=str(ulid.new()), question=question, answer="", computingTokens=0, completionTokens=0, totalTokens=0)
+class QuestionFactory:
+    
+    def __init__(self, uniqueIdGenerator: UniqueIdGeneratorInterface):
+        self.uniqueIdGenerator = uniqueIdGenerator
+
+    def create_question(self, question:str) -> Question:
+        return Question(id=self.uniqueIdGenerator.generateUlid(), question=question, answer="", computingTokens=0, completionTokens=0, totalTokens=0)
         

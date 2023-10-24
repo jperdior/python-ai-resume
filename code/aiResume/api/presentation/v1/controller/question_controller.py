@@ -16,7 +16,6 @@ class QuestionController(APIView):
 
         if serializer.is_valid():
             question = serializer.validated_data.get('question')
-            print(question)
             self.question_handler.create_question(question)
             return Response("This is a response to a POST request.", status=status.HTTP_201_CREATED)
         else:

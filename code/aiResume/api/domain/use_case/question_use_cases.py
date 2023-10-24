@@ -4,9 +4,10 @@ from api.domain.factories import QuestionFactory
 
 class QuestionUseCases():
 
-    def __init__(self, repository: QuestionRepositoryInterface):
+    def __init__(self, repository: QuestionRepositoryInterface, questionFactory: QuestionFactory):
         self.repository = repository
+        self.questionFactory = questionFactory
         
-    def create(self, question: str):
-        question = QuestionFactory.create_question(question=question)
+    def create(self, question: str) -> Question:
+        question = self.questionFactory.create_question(question=question)
         return self.repository.save(question)
